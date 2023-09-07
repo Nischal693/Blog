@@ -1,0 +1,105 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+{% comment %}    <P>
+        ABOUT!!
+    </P>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+        </tr>
+        {% for student in data.students %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.age}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endcomment %}
+	<!--Achievement(start)-->
+	<div id="achievements" style="margin-left: auto; margin-right: auto;">
+        <table id="achievements" border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="white">
+            <tr>
+                <td>
+                    <table border="0" cellpadding="15" cellspacing="0" width="80%" align="center">
+                        <tr>
+                            <td height="180" align="center" valign="middle">
+                                <font face="Verdana" size="7" color="white">
+                                    Achievements
+                                </font>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <font face="Verdana" size="4" color="black">
+                                    <ul>
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    April 7th,2023 - Present.
+                                                </li>
+                                                <li>
+                                                    Writing technical articles
+                                                    on programming related topics.
+                                                </li>
+                                            </ul>
+                                        </li>
+    
+                                        <li>
+                                            <hr color="black">
+                                            <hr color="black">
+                                            <hr color="black">
+                                            <b>Microsoft Learn Student Ambassador.</b>
+                                            <ul>
+                                                <li>
+                                                    April 7th,2023- Present.
+                                                </li>
+                                                <li>
+                                                    Conducted events and workshops on
+                                                    different technologies.
+                                                </li>
+                                            </ul>
+                                        </li>
+    
+                                        <li>
+                                            <hr color="black">
+                                            <hr color="black">
+                                            <hr color="black">
+                                            <b>Mentored HackTX.</b>
+                                            <ul>
+                                                <li>
+                                                    October,2020.
+                                                </li>
+                                                <li>
+                                                    Selected from Microsoft as Student
+                                                    ambassador where I mentored students
+                                                    in their projects.
+                                                </li>
+                                                <hr color="black">
+                                                <hr color="black">
+                                                <hr color="black">
+                                                <hr color="black">
+                                                <hr color="black">
+                                            </ul>
+                                        </li>
+    
+                                    </ul>
+    
+                                </font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+        <!--Achievement(end)-->
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}CONTENT{% endblock %}
+
+{% block content %}
+
+    <P>
+        HELLO NISCHAL!!
+    </P>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Course</th>
+        </tr>
+        {% for student in data.students %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.course}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+{%endblock%}

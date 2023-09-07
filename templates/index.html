@@ -1,0 +1,157 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% comment %}<table>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+        {% for student in data.students %}
+        {%if student.name == 'Nischal Moktan'%}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.course}}</td>
+        </tr>
+        {%endif%}
+        {% endfor %}
+
+    </table>
+Name: {{data.name}}
+
+'''<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+	<link rel="icon" type="image/x-icon" href="{% static 'pic4.jpg' %}">
+</head>
+
+<body>
+	<div class="flex-container_nav">
+		<!-- Header  -->
+		<header>
+			<nav class="abc">
+				<ul>
+					<li><a href="#1">HOME</a></li>
+					<li><a href="education.html" target="_blank">EDUCATION</a></li>
+					<li><a href="skills.html" target="_blank">SKILLS</a></li>
+					<li><a href="#project">PROJECTS</a></li>
+					<li><a href="#achievements">ACHIEVEMENTS</a></li>
+					<li><a href="#contact">CONTACT :</a></li>
+				</ul>
+			</nav>
+
+		</header>
+	
+		<!-- container 1 -->
+		<div class="flex-container1">
+			<div class="flex-item1">
+				<h1>
+					INTRODUCTION ABOUT ME:
+				</h1>
+				<div class="item1">
+					<div>
+						<p>
+
+							NISCHAL MOKTAN:<br>
+							Thanks for your interest, here
+							is a quick story of me and this
+							website.</p>
+							<hr color="black"><br>
+<p>
+							I do my work mainly in C-Language,
+							C++ and JAVA. C++ and Data Structure
+							& Algorithm are my stronger section.
+							Besides these I know Web Development,
+							LINUX and database as well.
+						</p>
+							<hr color="black"><br>
+<p>
+							This website is basically one of my
+							Web Development project which is
+							built using HTML only.
+							Here one can also find ideas for
+							projects in different languages.
+
+							Thanks again for reading this,
+							because of people like you, it
+							exists and prospers!
+
+<br><br><br><br><br><br>
+
+<h2 style="text-align: center;">THANK YOU FOR VISITING MY WEBSITE !</h2>
+
+
+
+						</p>
+					</div>
+					<div>
+						<p id="demo">
+
+						</p>
+
+						<img src="{% static 'pic4.jpg' %}">
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+	</div>
+
+
+</body>
+
+</html>
+
+{% endcomment %}
+<div class="container">	
+<div class="row">
+<div class="col-lg-B offset-2">
+    {% for post in posts %}
+    <div class="col">
+        {% if post.image %}
+            <div class="post-list-image">
+                <img src="{{post.image.url}}"
+                     alt="{{post.title}}"
+                     width="100"
+                     height="100"/>
+            </div>
+        {% endif %}    
+        <h2 class="text-center"><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h2>
+        <div class="post-content">{{post.content}}</div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if posts.has_previous %}
+                 <li class="page-item">
+                    <a class="page-link" href="?page={{posts.previous_page_number}}">
+                        Previous
+                    </a>
+                 </li>
+            {% endif %}
+          <li class="page-item"><a class="page-link active" href="#">{{posts.number}}</a></li>
+          {% if posts.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{posts.next_page_number}}">Next</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+	</div>
+{%endblock%}

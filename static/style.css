@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-width:100% ;
+}
+
+/* Body */
+.flex-container1{
+    display: flex;
+    flex-direction:row;
+    
+
+}
+.flex-item1{
+  background-color: white;
+  height: 800px;
+  width: 1560px;
+  color: black;
+
+
+}
+.flex-item1 h1{
+    margin-top: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0),0 0 25px rgb(22, 22, 22),0 0 5px rgb(249, 251, 251);
+    overflow: hidden;
+    border-right: 0.1cm solid red;
+white-space: nowrap;
+display:inline-block;
+animation-name: hacker;
+animation-duration: 5s;
+animation-delay: 1s;
+animation-fill-mode: forwards;
+/* animation-timing-function: steps(3,end); */
+animation-iteration-count: infinite;
+}
+@keyframes hacker{
+    from{width: 0%}
+    to{width: 100%}
+}
+
+.item1{
+    display: flex;
+    margin-top: 25px;
+    border: 1px solid white;
+    padding: 25px 25px 25px 25px ;
+    border-radius: 20px;
+    background-color:white;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    text-shadow: 2px 2px 4px #000;
+    box-shadow: 10px 10px 20px white;
+    
+      
+}
+.item1 p{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.item1 img{
+    float: right;
+    height: 600px;
+    width: 800px;
+}
+
+.flex-item2{
+    background-color:white;
+    height: 800px;
+    width: 300px;
+    position: sticky;
+    flex-grow: 1;
+    background-image: url(pic1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+}
+.flex-item2 h1{
+    text-align: center;
+}
+.flex-item2 p{
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.flex-item2 form{
+    text-align: center;
+    cursor: crosshair;
+    font-size: xx-large;
+}
+
+/*.flex-container2{
+    background-color: aqua;
+    width: 1550px;
+    height: 850px;
+ } */
+
+
+
+footer{
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 40px;
+    position: sticky;
+}
+
+.apple{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+.apple ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+}
+ 
+.apple li{
+    text-align: center;
+}
+
+.apple a{
+    text-decoration: none;
+    display: block;
+    background-color: black;
+    text-align: center;
+    padding: 8px;
+    color:white;
+    font-size: larger;
+}
+
+.apple button{
+    border: 1px solid white;
+    border-radius: 20%;
+}
+.apple li a:hover{
+    background-color: skyblue;
+    transition: 2s ;
+}
