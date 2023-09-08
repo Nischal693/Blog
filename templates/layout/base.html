@@ -11,8 +11,10 @@
 </head>
 <body>
 	{% include 'includes/navigationbar.html' %}
-    {% block content %}
-	{% endblock %}
-	{% include 'includes/footer.html' %}
+	<div class="container mt-3">
+		{% block content %}
+		{% endblock content %}
+	</div>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
