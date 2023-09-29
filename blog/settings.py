@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "apple",
     "post",
     "comment",
+    "accounts",
+    "profiles",
 ]
 
 MIDDLEWARE = [
@@ -78,8 +80,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':"blog-nischal",
+        "USER":"postgres",
+        "PASSWORD":"postgres",
+        "HOST":"localhost",
+        "PORT":5432,
     }
 }
 
@@ -128,3 +134,12 @@ MEDIA_ROOT=BASE_DIR/"media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL="/login/"
+
+AUTH_USER_MODEL="accounts.User"
+
+# Email configuration
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_HOST_USER= "nischal123321@gmail.com"
+EMAIL_PORT=587
+EMAIL_HOST_PASSWORD="fuunfuycvcsngwme"
+EMAIL_USE_TLS=True

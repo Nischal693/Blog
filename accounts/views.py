@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
 from django.views import View
 from django.urls import reverse
-from django.contrib.auth.models import User
+from accounts.models import User
 from django.contrib.auth import authenticate,login,logout
 from accounts.forms import SignUpForm,LoginForm
+from profiles.models import UserProfile
 
 # Create your views here.
 class LoginView(View):
@@ -15,7 +16,7 @@ class LoginView(View):
         if form.is_valid():
             user =authenticate(
                 request,
-                username=form.cleaned_data.get("username"),
+                username=form.cleaned_data.get("email"),
                 password=form.cleaned_data.get("password"),
             )
             if user:
@@ -32,11 +33,17 @@ class SignUpView(View):
     
     def post(self,request,*args,**kwargs):
         data=request.POST
-        form=SignUpForm(data=data)
+        form=SignUpForm(request.POST)
         if form.is_valid():
-            user=User(username=form.cleaned_data.get("username"))
+            user=User(
+                email=form.cleaned_data.get("email"),
+                username=form.cleaned_data.get("username"),
+                )
             user.set_password(form.cleaned_data.get("password"))
             user.save()
+            UserProfile.objects.create(user=user,
+                                       firstname=data.get("firstname"),
+                                       lastname=data.get("lastname"))
             return redirect(reverse("login"))  
         else:
             print("Errors",form.errors)  

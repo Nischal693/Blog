@@ -20,6 +20,7 @@ from apple.views import index,about,contact
 from accounts.views import LoginView,SignUpView,LogoutView
 from django.conf.urls.static import static
 from django.conf import settings
+from apple.views import handle_404,handle_403,handle_500
 from post.views import IndexView
 
 urlpatterns = [
@@ -28,9 +29,15 @@ urlpatterns = [
     path("contact/",contact,name="contact"),
     path("about/",about,name="about"),
     path("post/",include('post.urls')),
+    path("account/",include('profiles.urls')),
     path("login/",LoginView.as_view(),name="login"),
     path("logout/",LogoutView.as_view(),name="logout"),
     path("signup/",SignUpView.as_view(),name="signup"),
+    path("error/404",handle_404,name="404_error"),
+    path("error/403",handle_403,name="403_error"),
+    path("error/500",handle_500,name="500_error"),
+
+
 
 ]
 
